@@ -7,6 +7,7 @@ use terminal_menu::{
 };
 
 pub fn list_menu() {
+    std::process::Command::new("clear").status().unwrap();
     let lang = "rust";
     let menu = menu(vec![
         label("list menu"),

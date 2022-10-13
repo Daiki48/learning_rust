@@ -8,10 +8,14 @@ Command to clear screen
 
 ## Linux or macOS terminal
 
+```rust
 std::process::Command::new("clear").status().unwrap();
+```
 
 ## Windows
 
+```rust
 std::process::Command::new("cls").status().unwrap();
+```
 
 This basically sends the `clear` command to terminal.

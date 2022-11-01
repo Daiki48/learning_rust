@@ -17,6 +17,7 @@ impl eframe::App for MyApp {
     fn update(&mut self, ctx: &egui::Context, frame: &mut eframe::Frame) {
         egui::CentralPanel::default().show(ctx, |ui| {
             ui.heading("Try to close the window");
+            ui.label("This is label.");
         });
 
         if self.show_confirmation_dialog {

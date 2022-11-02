@@ -1,4 +1,8 @@
-#![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
+// このように書いてexeファイルを実行すると黒いコマンドウィンドウが立ち上がる
+// #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
+
+// このように書くとコマンドウィンドウは立ち上がらない
+#![windows_subsystem = "windows"]
 
 use eframe::egui;
 

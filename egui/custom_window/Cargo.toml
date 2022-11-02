@@ -1,0 +1,9 @@
+[package]
+name = "custom_window"
+version = "0.1.0"
+edition = "2021"
+
+
+[dependencies]
+egui = "0.19.0"
+eframe = "0.19.0"

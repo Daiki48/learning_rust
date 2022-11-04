@@ -1,0 +1,8 @@
+[package]
+name = "calc"
+version = "0.1.0"
+edition = "2021"
+
+
+[dependencies]
+native-windows-gui = "1.0.12"

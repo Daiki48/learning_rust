@@ -6,4 +6,4 @@ $ cargo run
 
 # TODO
 
-[] Decimal point calculation
+- [ ] Decimal point calculation

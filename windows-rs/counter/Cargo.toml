@@ -1,0 +1,10 @@
+[package]
+name = "counter"
+version = "0.1.0"
+edition = "2021"
+
+
+[dependencies.windows]
+version = "0.43.0"
+features = ["Win32_System_Performance"]
+

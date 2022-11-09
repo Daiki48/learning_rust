@@ -1,3 +1,5 @@
+#![windows_subsystem = "windows"]
+
 use dioxus::prelude::*;
 
 fn app(cx: Scope) -> Element {

@@ -1,0 +1,9 @@
+[package]
+name = "form"
+version = "0.1.0"
+edition = "2021"
+
+
+[dependencies]
+dioxus = "0.2.4"
+dioxus-desktop = "0.2"

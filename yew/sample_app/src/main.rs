@@ -41,11 +41,13 @@ impl Component for Model {
         let link = ctx.link();
         html! {
             <div>
-                <h1>{"Counter - Yew"}</h1>
-                <button onclick={link.callback(|_| Msg::Increment)}> {"+"} </button>
-                <button onclick={link.callback(|_| Msg::Decrement)}> {"-"} </button>
-                <button onclick={link.callback(|_| Msg::Delete)}> {"delete"} </button>
-                <span>{&self.value}</span>
+                <h1 class="title">{"Counter - Yew"}</h1>
+                <div class="btn">
+                    <button onclick={link.callback(|_| Msg::Increment)}> {"+"} </button>
+                    <button onclick={link.callback(|_| Msg::Decrement)}> {"-"} </button>
+                    <button onclick={link.callback(|_| Msg::Delete)}> {"delete"} </button>
+                </div>
+                <span class="count">{&self.value}</span>
             </div>
         }
     }

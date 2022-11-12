@@ -1,0 +1,29 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+$background: #bbb999;
+$white: #fff;
+$black: #282936;
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Montserrat;
+    background: $background;
+}
+
+button {
+	padding: 10px;
+	margin: 10px;
+}
+
+
+.count {
+	padding: 10px;
+	margin: 20px;
+	color: #fffeee;
+	font-size: 50px;
+	text-align: center;
+	// background-color: blue;
+}

@@ -1,11 +1,13 @@
 use yew::prelude::*;
 
 enum Msg {
-    AddOne,
+    Increment,
+    Decrement,
+    Delete,
 }
 
 struct Model {
-    value: i64,
+    value: i32,
 }
 
 impl Component for Model {
@@ -20,10 +22,18 @@ impl Component for Model {
 
     fn update(&mut self, ctx: &Context<Self>, msg: Self::Message) -> bool {
         match msg {
-            Msg::AddOne => {
+            Msg::Increment => {
                 self.value += 1;
                 true
-            }
+            },
+            Msg::Decrement => {
+                self.value -= 1;
+                true
+            },
+            Msg::Delete => {
+                self.value = 0;
+                true
+            },
         }
     }
 
@@ -31,7 +41,10 @@ impl Component for Model {
         let link = ctx.link();
         html! {
             <div>
-                <button onclick={link.callback(|_| Msg::AddOne)}> {"+"} </button>
+                <h1>{"Counter - Yew"}</h1>
+                <button onclick={link.callback(|_| Msg::Increment)}> {"+"} </button>
+                <button onclick={link.callback(|_| Msg::Decrement)}> {"-"} </button>
+                <button onclick={link.callback(|_| Msg::Delete)}> {"delete"} </button>
                 <span>{&self.value}</span>
             </div>
         }

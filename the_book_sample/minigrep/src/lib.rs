@@ -38,6 +38,12 @@ pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
     f.read_to_string(&mut contents)?;
     println!("With Text :\n{}", contents);
 
+    println!("Search word is {}", &config.query);
+    println!("Search result : ");
+    for line in search(&config.query, &contents) {
+        println!("{}", line);
+    }
+
     Ok(())
 
     // 下記をmain関数から抽出してきたが、抽出したのでエラー処理を追加できる。
@@ -54,3 +60,51 @@ pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
 
 }
 
+
+pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
+    // 空のVec配列を用意 （可変なベクタ）
+    let mut results = Vec::new();
+
+    // linesメソッド -> 文字列を行ごとに繰り返す。イテレータを返す。
+    // line.contains(query) -> 現在の行がクエリ文字列を含むかどうかを確認する。
+    for line in contents.lines() {
+        if line.contains(query) {
+            results.push(line);
+        }
+    }
+    // forループの後に、results(ベクタ)を返却する。
+    results
+}
+
+// 下記はテストで失敗させるためのsearch関数
+// ずっと空のベクタ返すようになっている
+// pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
+//     vec![]
+// }
+
+// testを実行するときは、まずは失敗するやつを行う
+// そのあとに成功するやつを作る
+// そのためのtest
+#[cfg(test)]
+mod test {
+    use super::*;
+
+    #[test]
+    fn one_result() {
+        let query = "duct";
+        // rustは
+        // 安全で速く生産性も高い。
+        // 3つ選んで。
+        let contents = "\
+        Rust:
+        // インデントするとtest実行時に左辺と右辺が一致しなくてエラーが発生する。
+safe, fast, productive.
+        Pick three.\
+        ";
+
+        assert_eq!(
+            vec!["safe, fast, productive."],
+            search(query, contents)
+        );
+    }
+}

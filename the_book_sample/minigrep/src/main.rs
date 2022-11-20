@@ -1,9 +1,9 @@
+// lib.rsにある構造体やrun関数などのモジュールを読み込む
 extern crate minigrep;
+use minigrep::Config;
 
 use std::env;  // 引数など環境変数に関する標準クレート
 use std::process;
-
-use minigrep::Config;
 
 fn main() {
     // collectで、引数すべてをVec<String>に変換

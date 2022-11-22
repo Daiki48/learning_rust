@@ -1,6 +1,6 @@
 use bevy::{
     prelude::*,
-    sprite::MaterialMesh2dBundle
+    sprite::MaterialMesh2dBundle,
 };
 
 fn setup(
@@ -11,8 +11,8 @@ fn setup(
     commands.spawn(Camera2dBundle::default());
     commands.spawn(MaterialMesh2dBundle {
         mesh: meshes.add(Mesh::from(shape::Quad::default())).into(),
-        transform: Transform { translation: (default()), rotation: (default()), scale: (Vec3::splat(128.)) },
-        // transform: Transform.default().with_scale(Vec3::splat(128.)),
+        // transform: Transform { translation: (default()), rotation: (default()), scale: (Vec3::splat(128.)) }, // この書き方でも動く
+        transform: Transform::default().with_scale(Vec3::splat(128.)),
         material: materials.add(ColorMaterial::from(Color::PURPLE)),
         ..default()
     });

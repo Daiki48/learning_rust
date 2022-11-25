@@ -8,7 +8,7 @@ struct MyApp {
 }
 
 impl eframe::App for MyApp {
-    fn update(&mut self, ctx: &egui::Context, frame: &mut eframe::Frame) {
+    fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
         egui::CentralPanel::default().show(ctx, |ui| {
             ui.heading("This is header");
             ui.horizontal(|ui| {
@@ -16,7 +16,8 @@ impl eframe::App for MyApp {
             });
             if ui.button("+").clicked() {
                 self.count += 1;
-            } else if ui.button("-").clicked() {
+            }
+            if ui.button("-").clicked() {
                 self.count -= 1;
             }
             ui.label(format!("count: {}", &self.count));

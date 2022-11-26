@@ -2,4 +2,4 @@
 
 I did not understand the LabelOpts section, but the error told me.
 
-![./screenshot/winsafe_LabelOpts_error.png]
+![error_screen](./screenshot/winsafe_LabelOpts_error.png)

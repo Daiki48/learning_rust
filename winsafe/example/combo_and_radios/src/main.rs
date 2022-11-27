@@ -18,15 +18,17 @@ pub struct MyWindow {
 
 impl MyWindow {
     pub fn new() -> Self {
+        // メインウィンドウの生成
         let wnd = gui::WindowMain::new(
             gui::WindowMainOpts {
                 title: "Combo and Radios".to_owned(),
                 // class_icon: gui::Icon::Id(101),    // error [exit code 101]
                 size: SIZE { cx: 300, cy: 300 },
-                ..Default::default()
+                ..Default::default() // このDefaultは、それ以外の項目はデフォルトという意味
             },
         );
 
+        // ラベルの生成
         let lbl_title = gui::Label::new(
             &wnd,
             gui::LabelOpts {
@@ -36,6 +38,7 @@ impl MyWindow {
             },
         );
 
+        // コンボボックスの生成
         let cmb_lang = gui::ComboBox::new(
             &wnd,
             gui::ComboBoxOpts {
@@ -45,6 +48,7 @@ impl MyWindow {
             },
         );
 
+        // ラジオボタンの生成
         let rad_editor = gui::RadioGroup::new(
             &wnd,
             &[

@@ -8,7 +8,8 @@ fn main() {
 
     let mut btn = button::Button::default()
         .with_size(80, 30)
-        .with_label("ファイルを選択")
+        .with_label("Select Files")
+        // .with_label("ファイルを選択")
         .center_of_parent();
 
     wind.end();

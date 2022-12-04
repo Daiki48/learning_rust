@@ -1,0 +1,9 @@
+[package]
+name = "form"
+version = "0.1.0"
+edition = "2021"
+
+
+[dependencies]
+fltk = "1.3.22"
+fltk-grid = "0.1"

@@ -37,6 +37,8 @@ impl Greet {
 
         grid.insert(&mut frame::Frame::default().with_label("name"), 2..4, 1);
 
+        grid.insert(&mut self.name, 2..4, 4);
+
     }
 }
 
